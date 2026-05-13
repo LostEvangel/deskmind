@@ -29,7 +29,7 @@ pipx install deskmind
 
 ### Or download the exe
 
-Grab the latest `deskmind.exe` from [Releases](https://github.com/yourusername/deskmind/releases).
+Grab the latest `deskmind.exe` from [Releases](https://github.com/LostEvangel/deskmind/releases).
 
 ## Quick Start
 
@@ -153,7 +153,7 @@ llm:
 ## Development
 
 ```bash
-git clone https://github.com/yourusername/deskmind.git
+git clone https://github.com/LostEvangel/deskmind.git
 cd deskmind
 uv pip install -e ".[dev]"
 ```

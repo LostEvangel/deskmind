@@ -40,9 +40,9 @@ dependencies = [
 ]
 
 [project.urls]
-homepage = "https://github.com/yourusername/deskmind"
-repository = "https://github.com/yourusername/deskmind"
-documentation = "https://github.com/yourusername/deskmind#readme"
+homepage = "https://github.com/LostEvangel/deskmind"
+repository = "https://github.com/LostEvangel/deskmind"
+documentation = "https://github.com/LostEvangel/deskmind#readme"
 
 [project.scripts]
 deskmind = "deskmind.cli:main"
