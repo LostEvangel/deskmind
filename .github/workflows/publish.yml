@@ -37,7 +37,6 @@ jobs:
   release:
     name: Create GitHub Release
     runs-on: windows-latest
-    needs: pypi
     permissions:
       contents: write
 
