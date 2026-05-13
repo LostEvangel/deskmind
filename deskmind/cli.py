@@ -269,6 +269,12 @@ def _format_size(bytes_: int) -> str:
 
 def main():
     """Entry point for the CLI."""
+    if len(sys.argv) == 1:
+        # Running without arguments (e.g. double-clicked)
+        cli(args=["--help"])
+        print("\nPress Enter to exit...", end="")
+        input()
+        return
     cli()
 
 
