@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    name: Test
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          pip install -e ".[dev]"
+
+      - name: Run tests
+        run: |
+          python -c "
+          from pathlib import Path
+          from deskmind.models.schemas import DeskMindConfig, OrganizeAction, ActionType
+          from deskmind.core.scanner import scan_desktop
+          from deskmind.core.rules_engine import load_rules_from_yaml, pre_match_files
+          from deskmind.core.classifier import BaseClassifier, SYSTEM_PROMPT
+          from deskmind.core.arranger import zone_to_folder
+          from deskmind.cli import cli
+          print('All imports OK')
+          "
+
+      - name: Build package
+        run: |
+          pip install build
+          python -m build
