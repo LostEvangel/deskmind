@@ -271,9 +271,11 @@ def main():
     """Entry point for the CLI."""
     if len(sys.argv) == 1:
         # Running without arguments (e.g. double-clicked)
-        cli(args=["--help"])
-        print("\nPress Enter to exit...", end="")
-        input()
+        console.print("[bold]DeskMind[/] -- AI-powered desktop organization tool")
+        console.print("Run [bold]deskmind --help[/] for usage in a terminal.")
+        console.print()
+        console.print("Quick start: [bold]deskmind run --rule \"group by type\"[/]")
+        input("Press Enter to exit...")
         return
     cli()
 
